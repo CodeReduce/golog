@@ -156,6 +156,11 @@ func parseLevel(lvl string) (level Level) {
 	return
 }
 
+// LogLevel return current log level. "debug" = -1 or "info" = 0
+func LogLevel() int {
+	return int(l.level)
+}
+
 // Fatal followed by a call to os.Exit(1).
 func Fatal(msg ...interface{}) {
 	l.zap.Fatal(msg...)
